@@ -1,18 +1,28 @@
 <template>
-  <masonry
-    :gutter="{ default: '16px', 700: '12px' }"
-    :cols="{ default: 4, 1000: 3, 700: 1, 500: 1 }"
-  >
-    <v-card
-      v-for="item in items"
-      :key="item.id"
-      class="mt-2 mb-md-4 mb-sm-3"
-      color="grey lighten-3"
-      flat
+  <v-div>
+    <masonry
+      :gutter="{ default: '16px', 700: '12px' }"
+      :cols="{ default: 4, 1904: 3, 1264: 2, 960: 2, 600: 1 }"
     >
-      <v-img :src="item.img"></v-img>
-    </v-card>
-  </masonry>
+      <v-hover v-for="item in items" :key="item.id">
+        <template v-slot:default="{ hover }">
+          <v-card class="mt-2 mb-6 mb-sm-4 mb-md-4" color="grey lighten-3" flat>
+            <v-img :src="item.img"></v-img>
+            <v-fade-transition>
+              <v-overlay
+                v-if="hover"
+                class="px-5 text-center"
+                absolute
+                color="#fca103"
+              >
+                <h2>{{ item.overlay }}</h2>
+              </v-overlay>
+            </v-fade-transition>
+          </v-card>
+        </template>
+      </v-hover>
+    </masonry>
+  </v-div>
 </template>
 
 <script>
@@ -20,24 +30,84 @@ export default {
   data() {
     return {
       items: [
-        { title: "Item 1", img: "https://picsum.photos/500/500" },
-        { title: "Item 2", img: "https://picsum.photos/400/500" },
-        { title: "Item 2", img: "https://picsum.photos/500/400" },
-        { title: "Item 3", img: "https://picsum.photos/300/500" },
-        { title: "Item 4", img: "https://picsum.photos/300/400" },
-        { title: "Item 5", img: "https://picsum.photos/500/600" },
-        { title: "Item 6", img: "https://picsum.photos/400/600" },
-        { title: "Item 7", img: "https://picsum.photos/900/700" },
-        { title: "Item 8", img: "https://picsum.photos/500/450" },
-        { title: "Item 9", img: "https://picsum.photos/700/800" },
-        { title: "Item 10", img: "https://picsum.photos/1000/1000" },
+        {
+          overlay: "Wellness Health Editorial Illustration",
+          img: "./assets/wellness-health-editorial.png",
+        },
+        {
+          overlay: "Children's Book Illustration 4",
+          img: "./assets/childrens-book-page3.png",
+        },
+        {
+          overlay: "Cartoon Dog Surface Design",
+          img: "./assets/surface-design-dogs.png",
+        },
+        {
+          overlay: "Garden Editorial Illustration",
+          img: "./assets/garden-editorial2.png",
+        },
+        {
+          overlay: "Apple Surface Design",
+          img: "./assets/surface-design-apples.png",
+        },
+        {
+          overlay: "Portrait Work 1",
+          img: "./assets/portrait-work6.png",
+        },
+        { overlay: "Portrait Work 2", img: "./assets/portrait-work5.png" },
+        { overlay: "Portrait Work 3", img: "./assets/portrait-work4.png" },
+        { overlay: "Portrait Work 4", img: "./assets/portrait-work3.png" },
+        { overlay: "Portrait Work 5", img: "./assets/portrait-work2.png" },
+        {
+          overlay: "Children's Book Illustration 6",
+          img: "./assets/childrens-book-page.png",
+        },
+        { overlay: "Portrait Work 6", img: "./assets/portrait-work.png" },
+        { overlay: "Moth Pattern Design", img: "./assets/moth-pattern.jpeg" },
+        {
+          overlay: "Meditation Editorial Illustration",
+          img: "./assets/meditation-editorial.jpeg",
+        },
+        {
+          overlay: "Garden Editorial Illustration 2",
+          img: "./assets/garden-editorial.jpeg",
+        },
+        {
+          overlay: "Children's Book Illustration 5",
+          img: "./assets/childrens-book-page2.png",
+        },
+        {
+          overlay: "Fashion Illustration",
+          img: "./assets/fashion-street-style2.jpeg",
+        },
+        {
+          overlay: "Food Editorial Illustration",
+          img: "./assets/editorial-food-lifestyle.png",
+        },
+        {
+          overlay: "Children's Book Illustration",
+          img: "./assets/childrens-book-page6.png",
+        },
+        {
+          overlay: "Fashion Illustration 2",
+          img: "./assets/fashion-street-style.jpeg",
+        },
+        {
+          overlay: "Children's Book Illustration 2",
+          img: "./assets/childrens-book-page5.png",
+        },
+        {
+          overlay: "Children's Book Illustration 3",
+          img: "./assets/childrens-book-page4.png",
+        },
+        {
+          overlay: "Texas Inspired Surface Design",
+          img: "./assets/surface-design-texas.png",
+        },
+        { overlay: "Card Design", img: "./assets/card-design2.png" },
+        { overlay: "Card Design 2", img: "./assets/card-design.png" },
       ],
     };
-  },
-  methods: {
-    randomNum() {
-      return Math.floor(Math.random() * 500) + 100;
-    },
   },
 };
 </script>
