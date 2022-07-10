@@ -1,40 +1,55 @@
 <template>
   <v-app dark>
-    <h1 v-if="error.statusCode === 404">
-      {{ pageNotFound }}
-    </h1>
+    <div v-if="error.statusCode === 404">
+      <v-row>
+        <v-spacer />
+        <v-col cols="8" class="text-center">
+          <h1>
+            {{ pageNotFound }}
+          </h1>
+          <NuxtLink to="/"> Back To Home Page </NuxtLink>
+        </v-col>
+        <v-spacer />
+      </v-row>
+      <v-row class="d-flex align-center justify-center">
+        <v-img
+          src="./assets/flowergirl.gif"
+          contain
+          alt="Maggie Yager
+            written in curvy handwriting"
+          max-width="500px"
+        ></v-img>
+      </v-row>
+    </div>
     <h1 v-else>
       {{ otherError }}
     </h1>
-    <NuxtLink to="/">
-      Home page
-    </NuxtLink>
   </v-app>
 </template>
 
 <script>
 export default {
-  layout: 'empty',
+  layout: "empty",
   props: {
     error: {
       type: Object,
-      default: null
-    }
+      default: null,
+    },
   },
-  data () {
+  data() {
     return {
-      pageNotFound: '404 Not Found',
-      otherError: 'An error occurred'
-    }
+      pageNotFound: "404 Page Not Found",
+      otherError: "An error occurred",
+    };
   },
-  head () {
+  head() {
     const title =
-      this.error.statusCode === 404 ? this.pageNotFound : this.otherError
+      this.error.statusCode === 404 ? this.pageNotFound : this.otherError;
     return {
-      title
-    }
-  }
-}
+      title,
+    };
+  },
+};
 </script>
 
 <style scoped>

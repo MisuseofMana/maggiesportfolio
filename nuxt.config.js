@@ -1,5 +1,11 @@
 import colors from "vuetify/es5/util/colors";
 
+const og_image =
+  "https://raw.githubusercontent.com/MisuseofMana/maggiesportfolio/main/ogImage.png";
+
+const description =
+  "The Art and Illustrations of Maggie Yager -    Maggie Yager is an illustrator and fine artist based in Indianapolis, IN whose work focuses on the magic found inchildhood, our innate connection to nature, and all the unique individuals that make our world one of a kind. She has a heart for children’s books, a knack for creating playful patterns, and the ambition to create editorials that suit any subject. Maggie enjoys growing plants with her partner, petting her moody rabbit, and exploring local trails when she’s not at home creating art.";
+
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
   ssr: false,
@@ -9,16 +15,59 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: "%s - maggies-portfolio",
-    title: "maggies-portfolio",
+    titleTemplate: "%s - Art of Maggie Yager",
+    title: "Art of Maggie Yager",
     htmlAttrs: {
       lang: "en",
     },
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { hid: "description", name: "description", content: "" },
       { name: "format-detection", content: "telephone=no" },
+
+      {
+        name: "description",
+        hid: "description",
+        content: description,
+      },
+      { property: "og:type", hid: "og:type", content: "website" },
+      {
+        property: "og:url",
+        hid: "og:url",
+        content: "https://www.maggieyager.com/",
+      },
+      {
+        property: "og:title",
+        hid: "og:title",
+        content: "The Art of Maggie Yager",
+      },
+      {
+        property: "og:description",
+        hid: "og:description",
+        content: description,
+      },
+      { property: "og:image", hid: "og:image", content: og_image },
+      {
+        property: "twitter:card",
+        hid: "summary_large_image",
+        content: og_image,
+      },
+      {
+        property: "twitter:url",
+        hid: "twitter:url",
+        content: "https://www.maggieyager.com/",
+      },
+      {
+        property: "twitter:title",
+        hid: "twitter:title",
+        content: "The Art of Maggie Yager",
+      },
+      {
+        property: "twitter:description",
+        hid: "twitter:description",
+        content: description,
+      },
+      { property: "twitter:image", hid: "twitter:image", content: og_image },
     ],
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
   },
