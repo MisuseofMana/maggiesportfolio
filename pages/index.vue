@@ -109,6 +109,10 @@ export default {
         { overlay: "Portrait Work 2", img: "./assets/portrait-work5.png" },
         { overlay: "Animated Illustration", img: "./assets/flowergirl.gif" },
         { overlay: "Portrait Work 3", img: "./assets/portrait-work4.png" },
+        {
+          overlay: "Lifestyle Editorial",
+          img: "./assets/lifestyle-editorial.png",
+        },
         { overlay: "Portrait Work 4", img: "./assets/portrait-work3.png" },
         { overlay: "Portrait Work 5", img: "./assets/portrait-work2.png" },
         {
@@ -131,6 +135,10 @@ export default {
           img: "./assets/childrens-book-page2.png",
         },
         {
+          overlay: "Portrait Work 8",
+          img: "./assets/portrait-work8.png",
+        },
+        {
           overlay: "Surface Design Shapes",
           img: "./assets/surface-design-shapes.png",
         },
@@ -151,8 +159,8 @@ export default {
           img: "./assets/fashion-street-style.jpeg",
         },
         {
-          overlay: "Children's Book Illustration 2",
-          img: "./assets/childrens-book-page5.png",
+          overlay: "Quote Editorial Illustration",
+          img: "./assets/editorial-inspirational.png",
         },
         {
           overlay: "Children's Book Illustration 3",

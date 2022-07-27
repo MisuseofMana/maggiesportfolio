@@ -2,7 +2,7 @@
   <v-app dark>
     <v-container>
       <v-row align="center" justify="between" class="py-5" no-gutters>
-        <v-col cols="12" lg="5" class="d-flex justify-lg-start justify-center">
+        <v-col cols="12" lg="5">
           <v-img
             src="./assets/maggie-yager.png"
             contain
